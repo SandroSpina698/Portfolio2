@@ -1,0 +1,246 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+@import '../Reusable.scss';
+
+$timing        : 265ms;
+$start-orange     : #ec9f05;
+$end-orange        : #ff4e00;
+$bluefade      : #0043E0;
+$gradient      : #00B5F5;
+
+@mixin transformScale($size: 1) {
+    transform: scale($size);
+    -ms-transform: scale($size);
+    -webkit-transform: scale($size);
+}
+
+
+@keyframes write {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+
+}
+
+.home{
+    .img{
+        position: relative;
+        width: 280px;
+        height: 280px;
+        .activeMoi{
+            opacity: 1;
+        }
+        .nonactiveMoi{
+            opacity: 0;
+        }
+        .activeSilco{
+            opacity: 1;
+        }
+        .nonactiveSilco{
+            opacity: 0;
+        }
+    }
+    img{
+        position: absolute;
+        top:0;
+        left: 0;
+        transition: opacity 1s linear;
+    }
+    min-height: 100vh;
+
+    &>div{
+        margin-top: 50px;
+    }
+
+    .bottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        margin: 15px 0 150px 0;
+        #beFree{
+            color: white;
+            width: 9em;
+            // height: 9em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            padding: 5px;
+            position: relative;
+            &::before{
+                content: "";
+                width: 60px;
+                
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                background: -webkit-linear-gradient(45deg, $start-orange, $end-orange);
+                
+                border-radius: 50%;
+                transition: all 0.5s ease-in-out;
+                z-index: -1;
+            }
+            &:hover:before {
+                    transform: scale(0);
+                    transition: all $timing ease-in;
+                }
+
+            
+            p{
+                color: $text-1;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            svg{
+                width: 20%;
+                height: 50px;
+            }
+        }
+        .icon{
+            position:relative;
+            width: 9em;
+            &:hover{
+                .bubble{
+                    display: block;
+                }
+            }
+            .bubble {
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                position: absolute;
+                left: -40px;
+                max-width: 30em;
+                display: none;
+                background-color: $text-1;
+                padding: 1.125em 1.5em;
+                font-size: 1.25em;
+                border-radius: 1rem;
+                color: #212121;
+              box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+            }
+            
+            .bubble::before {
+
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                bottom: 100%;
+                left: 1.5em; 
+                border: .75rem solid transparent;
+                border-top: none;
+                border-bottom-color: $text-1;
+                filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+            }
+            
+        }
+        #arrow{
+            width : 2em;
+            height: 2em;
+            color: $start-orange;
+        }
+    }
+
+    &,.welcome-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+        
+    .welcome-text{
+        font-family: $font-vogue;
+        color: $text-1;
+        font-size: 30px;
+        #comment{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: $text-3;
+            position: relative;
+            height: 24px;
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                height: 100%;
+                background-color: #ff4e00;
+                width: 1px;
+                margin-left: 4px;
+                animation: write 1s linear infinite;
+            }
+        }
+    }
+    .social-icons {
+        padding: 0;
+        list-style: none;
+        margin: 1em;
+    
+        li {
+            display: inline-block;
+            margin: 0.15em;
+            position: relative;
+            font-size: 1.2em;
+
+        }
+
+        i {
+            color: #fff;
+            position: absolute;
+            top: 21px;
+            left: 21px;
+            transition: all $timing ease-out;
+        }
+
+        a {
+            display: inline-block;
+        
+            &:before {
+                @include transformScale();
+                content: " ";
+                width: 60px;
+                height: 60px;
+                border-radius: 100%;
+                display: block;
+                background: linear-gradient(45deg, $start-orange, $end-orange);
+                transition: all $timing ease-out;
+            }
+            
+            &:hover:before {
+                transform: scale(0);
+                transition: all $timing ease-in;
+            }
+            
+            &:hover i {
+                @include transformScale(2.2);
+                color: $start-orange;
+                background: -webkit-linear-gradient(45deg, $start-orange, $end-orange);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: all $timing ease-in;
+            }
+        }
+    
+    }
+
+    @media screen and (max-width: 560px) {
+        .bottom{
+            flex-direction: column;
+            .icon{
+                text-align: center;
+                .bubble{
+                    left: 10px;
+                    width: 10em;
+                }
+            }
+        }
+    }
+}

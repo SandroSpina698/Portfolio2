@@ -1,0 +1,16 @@
+@import '../Reusable.scss';
+
+body{
+    background-color: $bg-color;
+    
+}
+.App{
+    color: $text-1;
+    font-family: $font-3;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../Media/Texture.jpg');
+    background-attachment: fixed;
+
+}

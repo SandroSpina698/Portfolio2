@@ -1,0 +1,96 @@
+@import '../Reusable.scss';
+
+.parcours{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+    margin-bottom: 1em;
+    .navigation{
+        width: 6em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5em;
+        svg{
+            width : 2em;
+            height: 2em;
+            color: $start-orange;
+        }
+
+    }
+    .containerStep{
+        position: relative;
+        min-width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .explication-text{
+            width: 25vw;
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
+
+        }
+        .image{
+            width: 30vw;
+            img{
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        .checkpoint{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            color:$end-orange;
+            svg{
+                width: 100%;
+                height: auto;
+                transform: translateY(-50%);
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                width: 2px;
+                top: 0;
+                bottom: 50%;
+                background-color: #fff;
+                z-index: -1;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                width: 2px;
+                top: 50%;
+                bottom: 0;
+                background-color: #fff;
+                z-index: -1;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            .checkpoint{
+                display: none;
+            }
+            .explication-text{
+                width: 40vw;
+            }
+            .image{
+                width: 45vw;
+            }
+        }
+        @media screen and (max-width:550px) {
+            
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .explication-text{
+                width: 80vw;
+            }
+            .image{
+                width: 80vw;
+            }
+            
+        }
+    }
+}

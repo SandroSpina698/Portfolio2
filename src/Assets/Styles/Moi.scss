@@ -1,0 +1,267 @@
+@import '../Reusable.scss';
+.Moi{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    .arrow{
+        width : 2em;
+        height: 2em;
+        color: $start-orange;
+    }
+    .introText{
+        margin-top: 3em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        p{
+            max-width: 450px;
+            text-align: center;
+            
+            &:nth-child(3){
+                color: $text-2;
+            }
+        }
+    }
+
+    
+
+    
+    .mouse_scroll {
+        display: block;
+        margin: 0 auto;
+        width: 24px;
+        height: 100px;
+        margin-top: 2vh;
+    }
+    
+    
+    .m_scroll_arrows
+    {
+      display: block;
+      width: 5px;
+      height: 5px;
+      -ms-transform: rotate(45deg); /* IE 9 */
+      -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+      transform: rotate(45deg);
+       
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      margin: 0 0 3px 4px;
+      
+      width: 16px;
+      height: 16px;
+    }
+    
+    
+    .unu
+    {
+      margin-top: 1px;
+    }
+    
+    .unu, .doi, .trei
+    {
+        -webkit-animation: mouse-scroll 1s infinite;
+        -moz-animation: mouse-scroll 1s infinite;
+        animation: mouse-scroll 1s infinite;
+      
+    }
+    
+    .unu
+    {
+      -webkit-animation-delay: .1s;
+      -moz-animation-delay: .1s;
+      -webkit-animation-direction: alternate;
+      
+      animation-direction: alternate;
+      animation-delay: alternate;
+    }
+    
+    .doi
+    {
+      -webkit-animation-delay: .2s;
+      -moz-animation-delay: .2s;
+      -webkit-animation-direction: alternate;
+      
+      animation-delay: .2s;
+      animation-direction: alternate;
+      
+      margin-top: -6px;
+    }
+    
+    .trei
+    {
+      -webkit-animation-delay: .3s;
+      -moz-animation-delay: .3s;
+      -webkit-animation-direction: alternate;
+      
+      animation-delay: .3s;
+      animation-direction: alternate;
+      
+      
+      margin-top: -6px;
+    }
+    
+    .mouse {
+      height: 42px;
+      width: 24px;
+      border-radius: 14px;
+      transform: none;
+      border: 2px solid white;
+      top: 170px;
+    }
+    
+    .wheel {
+      height: 5px;
+      width: 2px;
+      display: block;
+      margin: 5px auto;
+      background: white;
+      position: relative;
+      
+      height: 4px;
+      width: 4px;
+      border: 2px solid #fff;
+      -webkit-border-radius: 8px;
+              border-radius: 8px;
+    }
+    
+    .wheel {
+      -webkit-animation: mouse-wheel 0.6s linear infinite;
+      -moz-animation: mouse-wheel 0.6s linear infinite;
+      animation: mouse-wheel 0.6s linear infinite;
+    }
+    
+    @-webkit-keyframes mouse-wheel{
+       0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+      }
+    
+      100% {
+        opacity: 0;
+        -webkit-transform: translateY(6px);
+        -ms-transform: translateY(6px);
+        transform: translateY(6px);
+      }
+    }
+    @-moz-keyframes mouse-wheel {
+      0% { top: 1px; }
+      25% { top: 2px; }
+      50% { top: 3px;}
+      75% { top: 2px;}
+      100% { top: 1px;}
+    }
+    @-o-keyframes mouse-wheel {
+    
+       0% { top: 1px; }
+      25% { top: 2px; }
+      50% { top: 3px;}
+      75% { top: 2px;}
+      100% { top: 1px;}
+    }
+    @keyframes mouse-wheel {
+    
+       0% { top: 1px; }
+      25% { top: 2px; }
+      50% { top: 3px;}
+      75% { top: 2px;}
+      100% { top: 1px;}
+    }
+    
+    @-webkit-keyframes mouse-scroll {
+    
+      0%   { opacity: 0;}
+      50%  { opacity: .5;}
+      100% { opacity: 1;}
+    }
+    @-moz-keyframes mouse-scroll {
+    
+      0%   { opacity: 0; }
+      50%  { opacity: .5; }
+      100% { opacity: 1; }
+    }
+    @-o-keyframes mouse-scroll {
+    
+      0%   { opacity: 0; }
+      50%  { opacity: .5; }
+      100% { opacity: 1; }
+    }
+    @keyframes mouse-scroll {
+    
+      0%   { opacity: 0; }
+      50%  { opacity: .5; }
+      100% { opacity: 1; }
+    }
+    
+    .part{
+        
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5em 1em 5em 1em;
+        h1{
+            color: $text-1-lighter
+        }
+        .part-content{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            background-color: #191919;
+            border-radius: 3%;
+            padding: 5em;
+            box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem $start-orange,
+            0 0 0.8rem $start-orange,
+            0 0 2.8rem $start-orange,
+            inset 0 0 1.3rem $start-orange;
+            .text{
+                text-align: justify;
+                width: 40%;
+            }
+            .image-part{
+                max-width: 50%;
+                img{
+                    max-width: 100%;
+                    height: auto;
+
+                }
+            }
+            @media screen and (max-width: 1120px) {
+                flex-direction: column;
+                .image-part{
+                    min-width: 80%;
+                    max-width: 90%;
+                }
+                .text{
+                    width: 80%;
+                }
+            }
+             @media screen and (max-width: 900px) {
+                padding: 3em;
+            }
+            @media screen and (max-width:520px) {
+                padding: 3em 0 3em 0;
+                width: 100%;
+            }
+            
+        }
+        .title-section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            .title{
+                color: $text-1;
+                font-size: 3rem;
+            }
+        }
+
+    }
+}

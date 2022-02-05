@@ -1,0 +1,44 @@
+$start-orange : #ec9f05;
+$end-orange : #ff4e00;
+$bg-color: #212121;
+$text-1-lighter: rgba(255, 255, 255, 1);
+$text-1: rgba(255, 255, 255, 0.87);
+$text-2: rgba(255, 255, 255, 0.6);
+$text-3: rgba(255, 255, 255, 0.3);
+$gradient-orange: linear-gradient(45deg, $start-orange, $end-orange);
+@font-face {
+    font-family: Vogue;
+    src: url('../../public/Vogue.ttf') format(TrueType);
+}
+
+@font-face {
+    font-family: OptimusPrincepsSemiBold;
+    src: url('../../public/OptimusPrincepsSemiBold.ttf') format(TrueType);
+}
+@font-face {
+    font-family: Butler;
+    src: url('../../public/Butler.woff') format(Woff);
+}
+$font-3: Butler;
+$font-vogue: Vogue;
+$font-2: OptimusPrincepsSemiBold;
+
+.divider-container{ //https://codepen.io/isabelc/pen/MmrJgx
+    margin: 5px auto 0;
+    width: 300px;
+    max-width: 100%;
+    position: relative;
+    .divider-sizer{
+        overflow: hidden;
+        height: 30px;
+        &::after{
+            content: '';
+            display: block;
+            margin: -25px auto 0;
+            width: 100%;
+            height: 25px;
+            border-radius: 125px / 12px;
+            box-shadow: 0 2PX 8px $text-1;
+        }
+    }
+}

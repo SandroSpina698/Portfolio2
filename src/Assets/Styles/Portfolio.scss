@@ -1,0 +1,72 @@
+@import '../Reusable.scss';
+.Portfolio{
+    display: flex;
+    justify-content: space-around;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    .navigation{
+        width: 6em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5em;
+        svg{
+            width : 2em;
+            height: 2em;
+            color: $start-orange;
+        }
+
+    }
+        
+    .divider-container{
+        margin: 5em 1em 5em 1em;;
+    }
+
+    .project{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50vw;
+        margin-top: 2em ;
+        video{
+            width: 40vw;
+        }
+        @media screen and (max-width:1024px) {
+            width: 90vw;
+            video{
+                width: 70vw;
+            }
+            .explanation{
+                width: 80%;
+            }
+        }
+        @media screen and (max-width:865px) {
+            width: 100vw;
+            video{
+                width: 80vw;
+            }
+            .explanation{
+                width: 90%;
+            }
+        }
+        .explanation{
+            padding: 1em;
+            text-align: justify;
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            border-radius:8px;
+            background:#e6e6e6;
+            color: #212121;
+            
+        }
+    }
+    a{
+        color: $text-2;
+        font-size: clamp(0.5rem, 1.5vw, 1rem);
+    }
+}

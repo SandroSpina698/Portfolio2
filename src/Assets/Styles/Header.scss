@@ -1,0 +1,94 @@
+@import '../Reusable.scss';
+
+.header{
+
+    height: 100px;
+    color: $text-1;
+    font-family: $font-2;
+
+    .name-title{
+        margin-left: 5px;
+        font-size: 28px;
+    }
+
+    &, .left,.right, .list-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .right{
+        width: 40vw;
+    }
+
+    .list-links{
+        list-style: none;
+        justify-content: space-around;
+        padding: 0;
+        width: 100%;
+
+        a{
+            text-decoration: none;
+            color: $text-1;
+            font-size: 20px;
+            &:hover{
+                color: $text-1-lighter;
+            }
+        }
+
+        .active{
+            will-change: font-size;
+            color: $text-1-lighter;
+            font-size: 30px;
+            transition: all 0.3s ease;
+        }
+
+    }
+
+
+    .btn-up {
+        display: flex;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        background-color: #545454;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        position: fixed;
+        bottom: 5vh;
+        right: 1vw;
+        opacity: 0;
+        z-index: 5;
+    
+        .arrow-up {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    
+      .scrolled {
+        opacity: 1;
+      }
+    @media screen and (max-width: 1024px) {
+        .right{
+            width: 60vw;
+        }
+    }
+    @media screen and (max-width: 620px) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        .right{
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 395px) {
+        align-items: center;
+        .right{
+            display: none;
+        }
+    }
+}
