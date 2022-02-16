@@ -31,10 +31,10 @@ $gradient      : #00B5F5;
 
 .home{
     .img{
-        position: relative;
-        width: 280px;
-        height: 280px;
-        .activeMoi{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* .activeMoi{
             opacity: 1;
         }
         .nonactiveMoi{
@@ -45,13 +45,11 @@ $gradient      : #00B5F5;
         }
         .nonactiveSilco{
             opacity: 0;
-        }
+        } */
     }
     img{
-        position: absolute;
-        top:0;
-        left: 0;
-        transition: opacity 1s linear;
+        width: 270px;
+        height: auto;
     }
     min-height: 100vh;
 

@@ -32,10 +32,10 @@ function Header() {
                 <div className='logo'>S</div>
                 <div className='name-title'>Sandro SPINA</div>
             </div>
-            <div className='right'>
             <div className="btn-up" title="remonter la page" onClick={scrollTotop}>
             <FontAwesomeIcon icon='arrow-up'/>
             </div>
+            <div className='right'>
 
                 <ul className='list-links'>
                     <li className='link-home'><NavLink to='/'><FontAwesomeIcon icon="home" /></NavLink></li>

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import '../Assets/Styles/Home.scss';
-import MoiRond from "../Assets/Media/MoiSelfieRond.png";
-import MoiRondSilco from "../Assets/Media/MoiSelfieRondSilco.png";
+import MeNice from "../Assets/Media/moiGentil.png";
+/* import MoiRond from "../Assets/Media/MoiSelfieRond.png";
+import MoiRondSilco from "../Assets/Media/MoiSelfieRondSilco.png"; */
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {motion} from 'framer-motion';
 
 function Home() {
     const txt = "//Et merci de la visite :)";
-    const [count, setCount] = useState(0);
+    // const [count, setCount] = useState(0);
 
     function typeWriter(word, index) {
         let title = document.getElementById("comment");
@@ -53,9 +54,11 @@ function Home() {
             animate="visible"
             exit="exit"
         >
-            <div className='img' onClick={() => setCount(count+1)}>
-                <img className={count===7?'nonactiveMoi':'activeMoi'} src={MoiRond} alt="Photo de Moi" width="270px" />
-                <img className={count===7?'activeSilco':'nonactiveSilco'} src={MoiRondSilco} alt="Photo de presque moi, j'aime bien arcane" width="270px"/>
+            <div className='img' /* onClick={() => setCount(count+1)} */>
+                <img className='imageMe' src = {MeNice}/>
+
+                {/* <img className={count===7?'nonactiveMoi':'activeMoi'} src={MoiRond} alt="Photo de Moi" width="270px" />
+                <img className={count===7?'activeSilco':'nonactiveSilco'} src={MoiRondSilco} alt="Photo de presque moi, j'aime bien arcane" width="270px"/> */}
             </div>
 
             <div className='welcome-text'>
