@@ -15,6 +15,7 @@ import Parcours from './Components/Parcours';
 import Contact from './Components/Contact';
 library.add(fab, faCheckSquare, faHome, faArrowRight, faFileDownload, faArrowLeft, faMapMarker, faArrowUp)
 function App() {
+
   const location = useLocation();
   return (
     <div className="App">
